@@ -10,6 +10,8 @@ public interface IPlayerEconomy {
 
     void addEconomy(BigInteger economy);
 
+    void removeEconomy(BigInteger economy);
+
     //  PlayerEntity getPlayer();
 
 }

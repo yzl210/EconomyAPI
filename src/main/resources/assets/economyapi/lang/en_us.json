@@ -1,4 +1,12 @@
 {
   "economyapi.command.add": "%s players has successfully received %s economy",
+  "economyapi.command.add.failed": "Unable to add economy for player %s: %s",
+  "economyapi.command.set": "%s players' economy has successfully been set to %s",
+  "economyapi.command.set.failed": "Unable to set economy for player %s: %s",
+  "economyapi.command.send.confirm": "Are you sure to send %s economy to player %s? Click here or type %s to confirm",
+  "economyapi.command.send.notenough": "You don't have enough economy to do that!",
+  "economyapi.command.send.self": "Cannot send economy to yourself",
+  "economyapi.command.send.failed": "Unable to send %s economy to player %s: %s",
+  "economyapi.command.send": "Successfully sent %s economy to player %s",
   "economyapi.command.query": "Player %s has %s economy"
 }

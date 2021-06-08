@@ -1,4 +1,12 @@
 {
-  "economyapi.command.add": "成功给%s位玩家添加了%s经济",
+  "economyapi.command.add": "成功为%s位玩家添加了%s经济",
+  "economyapi.command.add.failed": "无法为玩家%s添加经济: %s",
+  "economyapi.command.set": "成功把%s位玩家的经济设置成%s",
+  "economyapi.command.set.failed": "无法为玩家%s设置经济: %s",
+  "economyapi.command.send.confirm": "你确定要发送%经济给玩家%s吗? 点击这里或输入%s",
+  "economyapi.command.send.notenough": "你没有足够的经济！",
+  "economyapi.command.send.self": "你不能给你自己发送经济！",
+  "economyapi.command.send.failed": "无法发送%s经济给玩家%s: %s",
+  "economyapi.command.send": "成功将%经济发送给玩家%s",
   "economyapi.command.query": "玩家%s有%s经济"
 }

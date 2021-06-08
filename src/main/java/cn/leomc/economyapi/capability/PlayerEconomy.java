@@ -28,6 +28,11 @@ public class PlayerEconomy implements IPlayerEconomy, INBTSerializable<CompoundN
         setEconomy(getEconomy().add(economy));
     }
 
+    @Override
+    public void removeEconomy(BigInteger economy) {
+        setEconomy(getEconomy().subtract(economy));
+    }
+
 
     @Override
     public CompoundNBT serializeNBT() {

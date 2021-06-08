@@ -30,7 +30,7 @@ public class EconomyAPI {
     }
 
     public static IPlayerEconomy getPlayerEconomyCapability(PlayerEntity player) {
-        return player.getCapability(CapabilityPlayerEconomy.PLAYER_ECONOMY).orElseThrow(() -> new RuntimeException("Economy capability of player: " + player + "  is null!"));
+        return player.getCapability(CapabilityPlayerEconomy.PLAYER_ECONOMY).orElseThrow(() -> new EconomyException("Economy capability of player: " + player.getDisplayName().getString() + "  is null!"));
     }
 
 
