@@ -1,0 +1,12 @@
+modLoader = "javafml"
+loaderVersion = "[34,)"
+license = "GNU GPLv3"
+
+[[mods]]
+modId = "economyapi"
+version = "${file.jarVersion}"
+displayName = "Economy API"
+authors = "6LeoMC"
+description = '''
+Economy API
+'''

@@ -1,0 +1,4 @@
+{
+  "economyapi.command.add": "%s players has successfully received %s economy",
+  "economyapi.command.query": "Player %s has %s economy"
+}
