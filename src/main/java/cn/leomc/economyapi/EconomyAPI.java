@@ -3,8 +3,12 @@ package cn.leomc.economyapi;
 import cn.leomc.economyapi.capability.CapabilityPlayerEconomy;
 import cn.leomc.economyapi.capability.IPlayerEconomy;
 import cn.leomc.economyapi.command.EconomyCommand;
+import cn.leomc.economyapi.network.NetworkHandler;
+import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -12,7 +16,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,10 +36,16 @@ public class EconomyAPI {
         return player.getCapability(CapabilityPlayerEconomy.PLAYER_ECONOMY).orElseThrow(() -> new EconomyException("Economy capability of player: " + player.getDisplayName().getString() + "  is null!"));
     }
 
+    @OnlyIn(Dist.CLIENT)
+    public static IPlayerEconomy getPlayerEconomyCapabilityClient(ClientPlayerEntity player) {
+        NetworkHandler.syncEconomy();
+        return player.getCapability(CapabilityPlayerEconomy.PLAYER_ECONOMY).orElseThrow(() -> new EconomyException("Economy capability of player: " + player.getDisplayName().getString() + "  is null!"));
+    }
 
     @SubscribeEvent
     public void onFMLCommonSetup(FMLCommonSetupEvent event) {
         CapabilityPlayerEconomy.register();
+        NetworkHandler.register();
     }
 
     @SubscribeEvent
